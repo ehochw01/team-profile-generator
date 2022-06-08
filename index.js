@@ -19,15 +19,49 @@ THEN I exit the application, and the HTML is generated */
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Employee = require('./lib/employee');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+const Manager = require('./lib/manager');
+const Team = require('./lib/team');
 
-// TODO: Create an array of questions for user input
-const questions = [];
+const team = new Team();
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function managerPrompt() {
+    inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Enter the Manager's name"
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Enter the Manager's employee ID"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Enter the Manager's Email Address"
+      },
+      {
+        type: "input",
+        name: "office",
+        message: "Enter the Manager's Office Number"
+      }
+    ])
+    .then(data => {
+      const manager = new Manager(data.name, data.id, data.email, data.office);
+      console.log("manager id is " + manager.getId());
+    });
+}
+
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  managerPrompt()
+}
 
 // Function call to initialize app
 init();
