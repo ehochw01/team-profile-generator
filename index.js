@@ -53,7 +53,8 @@ function managerPrompt() {
     ])
     .then(data => {
       const manager = new Manager(data.name, data.id, data.email, data.office);
-      console.log("manager id is " + manager.getId());
+      team.setManager(manager);
+      console.log(team.manager.getName());
     });
 }
 
