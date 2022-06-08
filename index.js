@@ -54,10 +54,44 @@ function managerPrompt() {
     .then(data => {
       const manager = new Manager(data.name, data.id, data.email, data.office);
       team.setManager(manager);
-      console.log(team.manager.getName());
+      console.log(data.menu);
+      menuPrompt();
     });
 }
 
+function menuPrompt() {
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        name: 'menu',
+        message: "How would you like to proceed?",
+        choices: ["Add an Engineer", "Add an Intern", "Finishing Building Team"]
+      }
+    ])
+    .then(data => {
+      switch(data.menu) {
+        case "Add an Engineer":
+          engineerPrompt();
+          break;
+        case "Add an Intern":
+          internPrompt();
+          break;
+        case "Finishing Building Team":
+          break;
+      }
+    });
+}
+
+function engineerPrompt(){
+  console.log("engineerPrompt()");
+  menuPrompt()
+
+}
+function internPrompt(){
+  console.log("internPrompt()");
+  menuPrompt()
+}
 
 // TODO: Create a function to initialize app
 function init() {
