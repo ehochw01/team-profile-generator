@@ -54,7 +54,6 @@ function managerPrompt() {
     .then(data => {
       const manager = new Manager(data.name, data.id, data.email, data.office);
       team.setManager(manager);
-      console.log(data.menu);
       menuPrompt();
     });
 }
@@ -78,6 +77,7 @@ function menuPrompt() {
           internPrompt();
           break;
         case "Finishing Building Team":
+          console.log(team);
           break;
       }
     });
@@ -85,17 +85,70 @@ function menuPrompt() {
 
 function engineerPrompt(){
   console.log("engineerPrompt()");
-  menuPrompt()
-
+  inquirer
+  .prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "Enter the Engineer's name"
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Enter the Engineer's employee ID"
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter the Engineer's Email Address"
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "Enter the Engineer's Github Username"
+    }
+  ])
+  .then(data => {
+    const engineer = new Engineer(data.name, data.id, data.email, data.github);
+    team.addEngineer(engineer);
+    menuPrompt();
+  });
 }
 function internPrompt(){
   console.log("internPrompt()");
-  menuPrompt()
+  inquirer
+  .prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "Enter the Intern's name"
+    },
+    {
+      type: "input",
+      name: "id",
+      message: "Enter the Intern's employee ID"
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Enter the Intern's Email Address"
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Enter the Intern's School"
+    }
+  ])
+  .then(data => {
+    const intern = new Intern(data.name, data.id, data.email, data.school);
+    team.addIntern(engineer);
+    menuPrompt();
+  });
 }
 
 // TODO: Create a function to initialize app
 function init() {
-  managerPrompt()
+  managerPrompt();
 }
 
 // Function call to initialize app
