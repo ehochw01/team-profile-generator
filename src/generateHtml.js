@@ -13,7 +13,7 @@ function createTestTeam() {
     team.addEngineer(new Engineer("Alec", 2, "alec@fakemail.com", "ibealec"));
     team.addEngineer(new Engineer("Grace", 3, "grace@fakemail.com", "gchoi2u"));
     team.addEngineer(new Engineer("Tammer", 4, "tammer@fakemail.com", "tammerg"));
-    team.addIntern(new Engineer("John", 5, "john@fakemail.com", "2University"));
+    team.addIntern(new Intern("John", 5, "john@fakemail.com", "2University"));
     return team;
 }
 
@@ -35,19 +35,52 @@ function createTemplate(team) {
     <div class="row m-5 row-cols-1 row-cols-md-3">
         <div class="col mb-4">
             <div class="card text-white bg-primary mb-3">
-                <div class="card-header">Manager</div>
+                <div class="card-header">${team.manager.getRole()}</div>
                 <div class="card-body">
-                    <h5 class="card-title">Jared</h5>
-                    <p class="card-text">ID: 1</p>
-                    <p class="card-text">Office Number: 1</p>
-                    <p class="card-text">Email: <a href="mailto: jared@fakemail.com" class="text-white">jared@fakemail.com</a></p>
+                    <h5 class="card-title">${team.manager.getName()}</h5>
+                    <p class="card-text">ID: ${team.manager.getId()}</p>
+                    <p class="card-text">Email: <a href="mailto: ${team.manager.getEmail()}" class="text-white">${team.manager.getEmail()}</a></p>
+                    <p class="card-text">Office Number: ${team.manager.officeNumber}</p>
+
                 </div>
             </div>
-        </div>`
+        </div>
+`
+
+    team.engineers.forEach((eng) => {
+        template +=
+`       <div class="col mb-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">${eng.getRole()}</div>
+                <div class="card-body">
+                    <h5 class="card-title">${eng.getName()}</h5>
+                    <p class="card-text">ID: ${eng.getId()}</p>
+                    <p class="card-text">Email: <a href="mailto: ${eng.getEmail()}" class="text-white">${eng.getEmail()}</a></p>
+                    <p class="card-text">Github: <a href="https://github.com/${eng.getGithub()}" target="_blank" class="text-white">${eng.getGithub()}</a></p>
+                </div>
+            </div>
+        </div>
+`
+    });
+
+    team.interns.forEach((int) => {
+        template +=
+`       <div class="col mb-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">${int.getRole()}</div>
+                <div class="card-body">
+                    <h5 class="card-title">${int.getName()}</h5>
+                    <p class="card-text">ID: ${int.getId()}</p>
+                    <p class="card-text">Email: <a href="mailto: ${int.getEmail()}" class="text-white">${int.getEmail()}</a></p>
+                    <p class="card-text">School: ${int.getSchool()}</p>
+                </div>
+            </div>
+        </div>
+`
+    })
 
     template +=
-`    
-    </div>
+`    </div>
 </body>
 </html>`
     return template;
