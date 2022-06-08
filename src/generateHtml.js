@@ -3,9 +3,6 @@ const Engineer = require("../lib/engineer");
 const Intern = require("../lib/intern");
 const Manager = require("../lib/manager");
 const Team = require("../lib/team");
-const fs = require('fs');
-
-const filename = "../dist/generated.html";
 
 function createTestTeam() {
     const team = new Team();
@@ -18,7 +15,7 @@ function createTestTeam() {
 }
 
 function createTemplate(team) {
-    console.log(team);
+    console.log("generateHtml createTemplate");
     let template = 
 `<!DOCTYPE html>
 <html lang="en">
@@ -87,13 +84,7 @@ function createTemplate(team) {
     
 }
 
-function writeToFile(fileName, fileTemplate) {
-    fs.writeFile(fileName, fileTemplate, (err) =>
-        err ? console.log(err) : console.log('Success!')
-    );
-}
-
-const team = createTestTeam();
-const fileTemplate = createTemplate(team);
-writeToFile(filename, fileTemplate);
-
+module.exports = {
+    createTestTeam
+    createTemplate
+};
