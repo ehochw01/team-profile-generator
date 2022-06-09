@@ -8,4 +8,7 @@ This is a node js application that takes in development Team data from command l
 Download the repo and run "npm install" in the same directory as the index.js. Then run node.js to run the command line app. The generated html file can be found in ./dist.
 
 ## Demo
-A demo video of the application can be found at ./demoVid.mov. Please download the video from GitHub to watch it/
+A demo video of the application can be found at ./demoVid.mov. Please download the video from GitHub to watch it.
+
+## Test
+Tests of the classes can be found in ./_tests_. A video of the tests passing can be found at testVid.mov. Please download the video from Github to watch it.

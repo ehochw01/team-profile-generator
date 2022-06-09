@@ -1,11 +1,10 @@
 {
   "name": "challenge10",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Description",
   "main": "index.js",
   "directories": {
-    "lib": "lib",
-    "test": "tests"
+    "lib": "lib"
   },
   "scripts": {
     "test": "jest"
@@ -24,5 +23,6 @@
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^28.1.1"
-  }
-} 
+  },
+  "devDependencies": {}
+}
