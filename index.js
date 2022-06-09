@@ -69,7 +69,6 @@ function menuPrompt() {
 }
 
 function engineerPrompt(){
-  console.log("engineerPrompt()");
   inquirer
   .prompt([
     {
@@ -100,7 +99,6 @@ function engineerPrompt(){
   });
 }
 function internPrompt(){
-  console.log("internPrompt()");
   inquirer
   .prompt([
     {

@@ -85,6 +85,5 @@ function createTemplate(team) {
 }
 
 module.exports = {
-    createTestTeam
     createTemplate
 };
