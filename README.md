@@ -17,4 +17,4 @@ Here is video showing a demo of the application
 
 Here is video showing all the tests passing
 
-[![Demo Video](https://img.youtube.com/vi/tbLwk7uuD-Y/0.jpg)](https://youtu.be/tbLwk7uuD-Y)
+[![Test Video](https://img.youtube.com/vi/tbLwk7uuD-Y/0.jpg)](https://youtu.be/tbLwk7uuD-Y)
