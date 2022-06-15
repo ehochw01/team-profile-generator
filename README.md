@@ -11,4 +11,10 @@ Download the repo and run "npm install" in the same directory as the index.js. T
 A demo video of the application can be found at ./demoVid.mov. Please download the video from GitHub to watch it.
 
 ## Test
-Tests of the classes can be found in ./_tests_. A video of the tests passing can be found at testVid.mov. Please download the video from Github to watch it.
+Here is video showing a demo of the application
+
+[![Demo Video](https://img.youtube.com/vi/FoAbWPC6CAQ/0.jpg)](https://youtu.be/FoAbWPC6CAQ)
+
+Here is video showing all the tests passing
+
+[![Demo Video](https://img.youtube.com/vi/tbLwk7uuD-Y/0.jpg)](https://youtu.be/tbLwk7uuD-Y)
